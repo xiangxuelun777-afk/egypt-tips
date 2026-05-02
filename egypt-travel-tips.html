@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>埃及旅游避坑指南 | Egypt Travel Scam Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold:#C8941A; --gold-light:#F0C84A; --gold-pale:#FEF6E4;
+  --ink:#1A1410; --ink-soft:#4A3F35; --ink-muted:#8A7A6A;
+  --sand:#F5EFE0; --sand-dark:#E2D5BD; --papyrus:#FAF7F0; --white:#FFFFFF;
+  --red:#B83A2B; --red-bg:#FDF0EE; --red-border:#EDADA0;
+  --amber:#B7770D; --amber-bg:#FEF6E4; --amber-border:#E8C87A;
+  --green:#2D7A4F; --green-bg:#EBF7F0; --green-border:#90D4B0;
+  --purple:#6B3FA0; --purple-bg:#F3EEFB; --purple-border:#C9A8F0;
+  --radius:12px; --radius-sm:8px;
+  --shadow:0 2px 14px rgba(26,20,16,.07); --shadow-hover:0 6px 24px rgba(26,20,16,.13);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans SC','Inter',sans-serif;background:var(--papyrus);color:var(--ink);line-height:1.7}
+
+/* LANG BAR */
+.lang-bar{background:var(--ink);display:flex;justify-content:flex-end;align-items:center;padding:8px 1.5rem;gap:6px}
+.lang-btn{padding:4px 14px;border-radius:20px;font-size:12px;font-weight:600;border:1px solid rgba(255,255,255,.25);background:transparent;color:rgba(255,255,255,.5);cursor:pointer;transition:all .2s;letter-spacing:.5px}
+.lang-btn.active{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+
+/* HERO */
+.hero{background:var(--ink);padding:3.5rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+.hero-pattern{position:absolute;inset:0;opacity:.03;background-image:repeating-linear-gradient(45deg,#C8941A 0,#C8941A 1px,transparent 0,transparent 50%);background-size:20px 20px}
+.hero-eyebrow{font-size:11px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:1rem}
+.hero h1{font-size:clamp(24px,5vw,40px);font-weight:700;color:#fff;line-height:1.25;margin-bottom:.75rem}
+.hero h1 .serif{font-family:'Noto Serif SC','Playfair Display',serif}
+.hero h1 span.hl{color:var(--gold-light)}
+.hero-sub{font-size:13px;color:rgba(255,255,255,.48);max-width:500px;margin:0 auto 2rem}
+.hero-stats{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+.stat-num{font-size:24px;font-weight:700;color:var(--gold-light)}
+.stat-label{font-size:11px;color:rgba(255,255,255,.38);margin-top:2px}
+
+/* NAV */
+.nav-wrapper{position:sticky;top:0;z-index:100;background:rgba(250,247,240,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--sand-dark)}
+.nav-tabs{display:flex;overflow-x:auto;scrollbar-width:none;max-width:960px;margin:0 auto;padding:0 1rem}
+.nav-tabs::-webkit-scrollbar{display:none}
+.nav-tab{padding:.85rem 1rem;font-size:13px;font-weight:500;color:var(--ink-muted);border:none;background:none;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s;flex-shrink:0}
+.nav-tab:hover{color:var(--ink-soft)}
+.nav-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+
+/* MAIN */
+.main{max-width:960px;margin:0 auto;padding:2rem 1rem 4rem}
+.section{display:none}
+.section.active{display:block}
+.section-title{font-family:'Noto Serif SC','Playfair Display',serif;font-size:21px;font-weight:700;margin-bottom:4px}
+.section-desc{font-size:13px;color:var(--ink-muted);margin-bottom:1.25rem}
+
+/* ALERT */
+.alert{display:flex;gap:10px;align-items:flex-start;padding:.85rem 1.1rem;border-radius:var(--radius-sm);margin-bottom:1.5rem;font-size:13px;line-height:1.65}
+.alert-icon{flex-shrink:0}
+.alert-warn{background:var(--amber-bg);border:1px solid var(--amber-border);color:var(--amber)}
+.alert-danger{background:var(--red-bg);border:1px solid var(--red-border);color:var(--red)}
+.alert-tip{background:var(--green-bg);border:1px solid var(--green-border);color:var(--green)}
+.alert-social{background:var(--purple-bg);border:1px solid var(--purple-border);color:var(--purple)}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:13px}
+.card{background:var(--white);border-radius:var(--radius);border:1px solid var(--sand-dark);padding:1.1rem 1.2rem;box-shadow:var(--shadow);transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:var(--shadow-hover);transform:translateY(-2px)}
+.card-danger{border-left:3px solid var(--red)}
+.card-warn{border-left:3px solid var(--gold)}
+.card-tip{border-left:3px solid var(--green)}
+.card-social{border-left:3px solid var(--purple)}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;margin-bottom:7px}
+.badge-red{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
+.badge-amber{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-border)}
+.badge-green{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border)}
+.badge-purple{background:var(--purple-bg);color:var(--purple);border:1px solid var(--purple-border)}
+.card h3{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.card p{font-size:13px;color:var(--ink-soft);line-height:1.65}
+
+/* SOURCE TAGS */
+.source-row{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.source-tag{font-size:10px;padding:1px 7px;border-radius:10px;background:var(--sand);color:var(--ink-muted);border:1px solid var(--sand-dark)}
+.source-tag.social{background:var(--purple-bg);color:var(--purple);border-color:var(--purple-border)}
+
+/* SOCIAL MEDIA BLOCK */
+.social-block{background:var(--purple-bg);border:1px solid var(--purple-border);border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:1.5rem}
+.social-block-title{font-size:13px;font-weight:700;color:var(--purple);margin-bottom:.75rem;display:flex;align-items:center;gap:6px}
+.social-items{display:flex;flex-direction:column;gap:8px}
+.social-item{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-soft);line-height:1.6}
+.social-dot{width:6px;height:6px;border-radius:50%;background:var(--purple);flex-shrink:0;margin-top:7px}
+.social-label{font-weight:700;color:var(--purple)}
+
+/* ATTRACTION CARDS */
+.attraction-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:15px}
+.attraction-card{background:var(--white);border-radius:var(--radius);border:1px solid var(--sand-dark);box-shadow:var(--shadow);overflow:hidden;transition:box-shadow .2s,transform .2s}
+.attraction-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-2px)}
+.attraction-header{padding:1.1rem 1.25rem .9rem;background:var(--ink);display:flex;align-items:center;gap:12px}
+.attraction-emoji{font-size:24px}
+.attraction-name{font-family:'Noto Serif SC','Playfair Display',serif;font-size:14px;font-weight:600;color:#fff}
+.attraction-loc{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px}
+.attraction-body{padding:.9rem 1.25rem}
+.pit-item{display:flex;gap:9px;align-items:flex-start;padding:.5rem 0;border-bottom:1px solid var(--sand)}
+.pit-item:last-child{border-bottom:none;padding-bottom:0}
+.pit-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:7px}
+.dot-red{background:var(--red)}.dot-amber{background:var(--gold)}.dot-green{background:var(--green)}.dot-purple{background:var(--purple)}
+.pit-text{font-size:13px;color:var(--ink-soft);line-height:1.6}
+.pit-label{font-weight:700;color:var(--ink)}
+
+/* COMMENTS */
+.comments-section{margin-top:3.5rem;padding-top:2rem;border-top:1px solid var(--sand-dark)}
+.comments-header{display:flex;align-items:center;gap:10px;margin-bottom:5px}
+.comments-title{font-family:'Noto Serif SC','Playfair Display',serif;font-size:19px;font-weight:600}
+.comments-badge{font-size:11px;background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-border);padding:2px 9px;border-radius:20px;font-weight:700}
+.comments-desc{font-size:13px;color:var(--ink-muted);margin-bottom:1.5rem}
+.giscus-placeholder{background:var(--white);border:1.5px dashed var(--sand-dark);border-radius:var(--radius);padding:2.5rem;text-align:center;color:var(--ink-muted)}
+.giscus-placeholder h3{font-size:15px;color:var(--ink-soft);margin-bottom:8px}
+.giscus-placeholder p{font-size:13px;line-height:1.8}
+.giscus-placeholder a{color:var(--gold);text-decoration:none;font-weight:600}
+
+footer{text-align:center;padding:2rem 1rem;font-size:12px;color:var(--ink-muted);border-top:1px solid var(--sand-dark)}
+
+@media(max-width:600px){
+  .cards,.attraction-grid{grid-template-columns:1fr}
+  .hero-stats{gap:1.5rem}
+  .nav-tab{padding:.85rem .7rem;font-size:12px}
+}
+
+[data-zh],[data-en]{display:none}
+body.zh [data-zh]{display:revert}
+body.en [data-en]{display:revert}
+span[data-zh],span[data-en]{display:none}
+body.zh span[data-zh]{display:inline}
+body.en span[data-en]{display:inline}
+</style>
+</head>
+<body class="zh">
+
+<div class="lang-bar">
+  <button class="lang-btn active" id="btn-zh" onclick="setLang('zh')">中文</button>
+  <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+</div>
+
+<div class="hero">
+  <div class="hero-pattern"></div>
+  <p class="hero-eyebrow">🏺 <span data-zh>旅行避坑指南</span><span data-en>Travel Scam Guide</span></p>
+  <h1>
+    <span data-zh><span class="serif">去埃及之前</span><br><span class="hl">这些坑你必须知道</span></span>
+    <span data-en><span class="serif">Before You Go to Egypt</span><br><span class="hl">What Every Traveler Must Know</span></span>
+  </h1>
+  <p class="hero-sub">
+    <span data-zh>整合官方领事提醒 + 小红书/微博/抖音网友真实经历 + 全球旅行者反馈 · 2025年最新版</span>
+    <span data-en>Official advisories + Xiaohongshu / Weibo / global traveler reports · Updated 2025</span>
+  </p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label"><span data-zh>避坑分类</span><span data-en>Categories</span></div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label"><span data-zh>热门景点</span><span data-en>Attractions</span></div></div>
+    <div class="stat"><div class="stat-num">60+</div><div class="stat-label"><span data-zh>条真实经验</span><span data-en>Real Tips</span></div></div>
+  </div>
+</div>
+
+<div class="nav-wrapper">
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showTab('scam',this)">🎭 <span data-zh>骗局套路</span><span data-en>Scams</span></button>
+    <button class="nav-tab" onclick="showTab('social',this)">📱 <span data-zh>民间避雷</span><span data-en>Community</span></button>
+    <button class="nav-tab" onclick="showTab('money',this)">💰 <span data-zh>金钱消费</span><span data-en>Money</span></button>
+    <button class="nav-tab" onclick="showTab('transport',this)">🚗 <span data-zh>交通出行</span><span data-en>Transport</span></button>
+    <button class="nav-tab" onclick="showTab('culture',this)">🕌 <span data-zh>文化禁忌</span><span data-en>Culture</span></button>
+    <button class="nav-tab" onclick="showTab('safety',this)">🛡️ <span data-zh>安全须知</span><span data-en>Safety</span></button>
+    <button class="nav-tab" onclick="showTab('pack',this)">🎒 <span data-zh>行前准备</span><span data-en>Packing</span></button>
+    <button class="nav-tab" onclick="showTab('spots',this)">📍 <span data-zh>景点专项</span><span data-en>Attractions</span></button>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ① 骗局套路 -->
+<div id="scam" class="section active">
+  <div class="section-title"><span data-zh>骗局套路</span><span data-en>Common Scams</span></div>
+  <div class="section-desc"><span data-zh>景区遍地骗局，认识了就不会中招</span><span data-en>Tourist scams are everywhere — knowing them is your best defense</span></div>
+  <div class="alert alert-danger">
+    <span class="alert-icon">⚠️</span>
+    <span>
+      <span data-zh>网友公认：「在开罗，我只允许自己被骗三次。」最有效应对：遇到任何搭讪一律说 <strong>"La Shukran"</strong>（阿语：不用谢谢），遇到纠缠威胁报警（Shurta）立刻见效。</span>
+      <span data-en>The golden rule: say <strong>"La Shukran"</strong> (No thanks in Arabic) to any unsolicited approach. If harassed, saying "Shurta" (police) works instantly — they fear authority.</span>
+    </span>
+  </div>
+  <div class="cards">
+    <div class="card card-danger">
+      <div class="badge badge-red"><span data-zh>金字塔必发</span><span data-en>Giza · Very Common</span></div>
+      <h3>🐪 <span data-zh>骆驼骑行陷阱</span><span data-en>Camel Ride Trap</span></h3>
+      <p><span data-zh>上骆驼前说"one dollar"甚至免费，下来变脸要100美元。有人直接把你抱上去"全自动体验"。不骑骆驼、骆驼入镜了也要收摄影费，不给就来三个大汉删你照片。</span>
+      <span data-en>"Free ride" on the way up, $100 to dismount. Some forcibly lift you onto the camel. Even if a camel just appears in your photo background, they demand a "photography fee." Best advice: don't engage at all.</span></p>
+      <div class="source-row"><span class="source-tag social">小红书</span><span class="source-tag social">微博热搜</span><span class="source-tag">Rough Guides</span></div>
+    </div>
+    <div class="card card-danger">
+      <div class="badge badge-red"><span data-zh>全景区</span><span data-en>All Sites</span></div>
+      <h3>👔 <span data-zh>假工作人员</span><span data-en>Fake Officials</span></h3>
+      <p><span data-zh>穿制服戴胸牌，热情带你参观，结束后伸手要1–100美元。保安、景区工作人员都有可能是骗子，甚至真正的工作人员也会伸手要小费。找不到地方只问穿制服的警察。</span>
+      <span data-en>People in unofficial uniforms guide you through a site, then demand large tips. Even real staff sometimes demand tips. If lost, only ask uniformed police — never follow a "helpful stranger."</span></p>
+      <div class="source-row"><span class="source-tag social">微博</span><span class="source-tag">US State Dept</span></div>
+    </div>
+    <div class="card card-danger">
+      <div class="badge badge-red"><span data-zh>全景区</span><span data-en>All Sites</span></div>
+      <h3>📸 <span data-zh>帮忙拍照收费</span><span data-en>Photo "Helper" Scam</span></h3>
+      <p><span data-zh>热心主动帮拍照，拍完索要10–100美元，不给就死缠烂打。有人在你旁边比耶入镜，拍完立刻要钱。陌生人主动要帮拍，直接说"No thanks"走掉，相机不要随手递人。</span>
+      <span data-en>Someone takes your photo uninvited, then demands $10–100. A stranger who "photobombs" your shot with a pose will immediately demand payment. Never hand your camera to a stranger.</span></p>
+      <div class="source-row"><span class="source-tag social">小红书</span><span class="source-tag social">抖音</span><span class="source-tag">beyondthebucketlist</span></div>
+    </div>
+    <div class="card card-danger">
+      <div class="badge badge-red"><span data-zh>全景区</span><span data-en>All Sites</span></div>
+      <h3>🎓 <span data-zh>免费向导骗局</span><span data-en>"Free Guide" Scam</span></h3>
+      <p><span data-zh>"我是大学教授/学生，练习中文，免费带你游览。"游览结束立刻要钱。天下没有免费向导，找导游只在景点入口售票处找有旅游部徽章的正规人员。</span>
+      <span data-en>"I'm a history professor practicing my English." After the tour, they demand payment. There is no such thing as a free tour. Only hire guides with an official Ministry of Tourism badge at ticket counters.</span></p>
+      <div class="source-row"><span class="source-tag social">小红书</span><span class="source-tag">Reddit</span><span class="source-tag">Rough Guides</span></div>
+    </div>
+    <div class="card card-warn">
+      <div class="badge badge-amber"><span data-zh>购物区</span><span data-en>Markets</span></div>
+      <h3>💸 <span data-zh>"One Dollar"强卖</span><span data-en>The "One Dollar" Hustle</span></h3>
+      <p><span data-zh>卖家说one dollar，接着往你手里塞更多东西索要高价。小孩也用这招乞讨，给了一个就会有一群追你跑800米。不要接任何陌生人递来的东西。</span>
+      <span data-en>A vendor quotes "one dollar" then shoves more items into your hands and demands far more. Give to one child and a crowd will chase you. Never accept anything handed to you unsolicited.</span></p>
+      <div class="source-row"><span class="source-tag social">微博热搜</span><span class="source-tag social">小红书</span><span class="source-tag">Reddit</span></div>
+    </div>
+    <div class="card card-warn">
+      <div class="badge badge-amber"><span data-zh>清真寺</span><span data-en>Mosques</span></div>
+      <h3>🕌 <span data-zh>清真寺"向导"</span><span data-en>Mosque Guide Scam</span></h3>
+      <p><span data-zh>有人恰好和你一起进清真寺，主动讲解，结束后说"那是一次参观，请付费"，要价高达100埃镑。大多数清真寺免费进入，有票亭才是真实收费的。</span>
+      <span data-en>Someone walks in beside you and starts explaining the mosque. At the end they say "that was a paid tour." Most mosques are free. If there's a fee, there's a clear ticket booth — don't let anyone walk with you uninvited.</span></p>
+      <div class="source-row"><span class="source-tag">beyondthebucketlist</span><span class="source-tag">Travel Tailors</span></div>
+    </div>
+    <div class="card card-warn">
+      <div class="badge badge-amber"><span data-zh>机场</span><span data-en>Airport</span></div>
+      <h3>🧳 <span data-zh>机场行李帮忙费</span><span data-en>Airport Luggage Scam</span></h3>
+      <p><span data-zh>穿酒红制服的人冲上来帮你把行李搬上安检机，代价100埃镑。过安检后还有人帮你搬下来，每人40埃镑。行李自己推，不要让任何人碰。</span>
+      <span data-en>Men in red uniforms grab your bags and load them onto the security belt — then demand 100 EGP. Others "help" unload on the other side for 40 EGP each. Push your own trolley and wave them off firmly.</span></p>
+      <div class="source-row"><span class="source-tag social">小红书</span><span class="source-tag social">微博</span></div>
+    </div>
+    <div class="card card-warn">
+      <div class="badge badge-amber"><span data-zh>购物</span><span data-en>Shopping</span></div>
+      <h3>📜 <span data-zh>假纸莎草画</span><span data-en>Fake Papyrus</span></h3>
+      <p><span data-zh>带你去"政府认证"的纸莎草工厂参观，然后高压推销，实际是用香蕉叶制作的劣质仿品。真正的纸莎草对光照有明显网格纹理，柔韧耐用。只在博物馆商店购买。</span>
+      <span data-en>You're invited to a "government-certified" papyrus factory, then pressured to buy banana-leaf fakes. Real papyrus shows a distinct grid texture when held to light. Buy only from museum gift shops.</span></p>
+      <div class="source-row"><span class="source-tag">Meander Wander</span><span class="source-tag social">小红书</span></div>
+    </div>
+    <div class="card card-tip">
+      <div class="badge badge-green"><span data-zh>应对技巧</span><span data-en>Defense Kit</span></div>
+      <h3>✅ <span data-zh>万能防骗口诀</span><span data-en>Your Defense Kit</span></h3>
+      <p><span data-zh>① 一律"La Shukran"；② 威胁喊 Shurta（警察）立竿见影；③ 不接任何人递来的东西；④ 戴墨镜不对眼，一对眼就来劲；⑤ 用 Uber/Careem 叫车价格透明。</span>
+      <span data-en>① Say "La Shukran" (No thanks); ② Mention "Shurta" (police) when harassed; ③ Never accept anything handed to you; ④ Wear sunglasses — avoiding eye contact with vendors stops them cold; ⑤ Use Uber or Careem for transparent pricing.</span></p>
+      <div class="source-row"><span class="source-tag social">豆瓣长帖</span><span class="source-tag social">小红书</span><span class="source-tag">beyondthebucketlist</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ② 民间避雷（新增） -->
+<div id="social" class="section">
+  <div class="section-title"><span data-zh>民间避雷贴精华</span><span data-en>Community Warnings</span></div>
+  <div class="section-desc"><span data-zh>来自小红书、微博、抖音、豆瓣的真实网友经历，官方攻略里找不到的细节</span><span data-en>Real experiences from Chinese social media & global travel forums — the details official guides miss</span></div>
+
+  <div class="alert alert-social">
+    <span class="alert-icon">📱</span>
+    <span>
+      <span data-zh>小红书上关于埃及的帖子已有 <strong>9.2亿次浏览</strong>，抖音话题 #埃及 播放量超 <strong>93亿次</strong>。这些网友的血泪史，是最真实的避坑指南。</span>
+      <span data-en>Egypt travel posts on Chinese social media have <strong>920M+ views</strong> on Xiaohongshu and <strong>9.3B+ plays</strong> on Douyin. These real experiences are the most valuable warnings you'll find.</span>
+    </span>
+  </div>
+
+  <!-- 小红书高赞 -->
+  <div class="social-block">
+    <div class="social-block-title">📕 <span data-zh>小红书高赞笔记精华</span><span data-en>Top Xiaohongshu Posts</span></div>
+    <div class="social-items">
+      <div class="social-item"><div class="social-dot"></div><div><span class="social-label"><span data-zh>骆驼加价：</span><span data-en>Camel surcharge: </span></span><span data-zh>@木子爱看世界：说好双人400埃镑，结束时一人被要600，理由是"后面还跟着4头骆驼"。笔记900+点赞，无数同款被坑评论。</span><span data-en>@Muzi loves the world: Agreed price 400 EGP for two, but charged 600 each at the end — "there were 4 extra camels behind." Post got 900+ likes with hundreds of "same here" comments.</span></div></div>
+      <div class="social-item"><div class="social-dot"></div><div><span class="social-label"><span data-zh>头巾骗局：</span><span data-en>Headscarf scam: </span></span><span data-zh>路过的当地人帮你"纠正"头巾戴法，重新戴好后索要200埃镑小费。被帮助前一定先拒绝。</span><span data-en>A local "corrects" how you're wearing your headscarf, then demands 200 EGP for the "service." Refuse any unsolicited help before they touch anything.</span></div></div>
+      <div class="social-item"><div class="social-dot"></div><div><span class="social-label"><span data-zh>黑车报价：</span><span data-en>Unlicensed taxi: </span></span><span data-zh>金字塔附近黑车2公里要价1000埃镑，正常价约20–50埃镑。任何打车一律用Uber/Careem，或出行前问酒店前台参考价。</span><span data-en>Unlicensed taxis near the Pyramids quoted 1,000 EGP for 2km. Normal fare is 20–50 EGP. Always use Uber/Careem, or ask your hotel for reference prices before getting in any cab.</span></div></div>
+      <div class="social-item"><div class="social-dot"></div><div><span class="social-label"><span data-zh>购物砍价底线：</span><span data-en>Bargaining floor: </span></span><span data-zh>集市购物要从报价的<strong>1/5（20%）甚至10%</strong>开始砍，不是三折，是两折。表现出可买可不买、转身就走的态度才是关键。</span><span data-en>Start bargaining at <strong>10–20% of the asking price</strong>, not 30%. The key is showing complete indifference — turn and walk away. They'll almost always call you back.</span></div></div>
+      <div class="social-item"><div class="social-dot"></div><div><span class="social-label"><span data-zh>网红达人亲历：</span><span data-en>Influencer's experience: </span></span><span data-zh>千万粉丝达人@蓝战非：前半程狠夸的司机，最后"开大几百里的路要三四千人民币，买东西乱报价"。视频爆火，引发大量共鸣。</span><span data-en>Top influencer @LanZhanFei praised his driver early on — only to be charged ¥3,000–4,000 for a detoured route and wildly inflated shopping prices. Video went viral.</span></div></div>
+    </div>
+  </div>
+
+  <!-- 微博热搜 -->
+  <div class="social-block">
+    <div class="social-block-title">🔥 <span data-zh>微博热搜话题</span><span data-en>Weibo Trending Topics</span></div>
+    <div class="social-items">
+      <div class="social-item"><div class="social-dot"></div><div><span class="social-label"><span data-zh>产业链骗局：</span><span data-en>Scam ecosystem: </span></span><span data-zh>埃及骗局不是单独骗子，而是产业链合作——机场安检、酒店、出租车、货币兑换，每个环节环环相扣，雁过拔毛。</span><span data-en>Egypt's scams are a coordinated ecosystem — airport staff, hotels, taxi drivers, and currency exchange operators work together. Every step has its designated "toll collector."</span></div></div>
+      <div class="social-item"><div class="social-dot"></div><div><span class="social-label"><span data-zh>"被骗到快裸奔"爆文：</span><span data-en>Viral article: </span></span><span data-zh>一篇《第一批去埃及旅行的人，已经被骗到快裸奔了》登上微博热搜，引发数万网友分享自己的被骗经历，成为近年最具影响力的出境游避坑内容。</span><span data-en>An article titled "The first wave of Egypt tourists have been scammed to near-ruin" trended on Weibo, sparking tens of thousands of personal scam stories — the most viral outbound travel warning in recent years.</span></div></div>
+      <div class="social-item"><div class="social-dot"></div><div><span class="social-label"><span data-zh>中国游客是"最肥韭菜"：</span><span data-en>"Richest targets": </span></span><span data-zh>当地华人导游透露：骗子确实特别针对中国游客，认为中国人"出手大方"。欧美游客也会被骗但手段不同。做足攻略是唯一破解方式。</span><span data-en>Local Chinese-speaking guides confirm: scammers specifically target Chinese tourists, believing they spend more freely. Western tourists get scammed too but differently. Thorough preparation is the only protection.</span></div></div>
+    </div>
+  </div>
+
+  <!-- 抖音/豆瓣 -->
+  <div class="social-block">
+    <div class="social-block-title">🎬 <span data-zh>抖音 · 豆瓣 · 知乎细节补充</span><span data-en>Douyin / Douban / Zhihu Details</span></div>
+    <div class="social-items">
+      <div class="social-item"><div class="social-dot"></div><div><span class="social-label"><span data-zh>墨镜是神器：</span><span data-en>Sunglasses are magic: </span></span><span data-zh>豆瓣长帖总结：不和摊贩对眼神，一对眼就来劲、紧跟不放。戴上墨镜低头走，是性价比最高的防骚扰方式。</span><span data-en>Douban travel diary: Never make eye contact with vendors — it signals you're interested. Sunglasses + looking straight ahead is the single most effective way to avoid being approached.</span></div></div>
+      <div class="social-item"><div class="social-dot"></div><div><span class="social-label"><span data-zh>景区入口商业街：</span><span data-en>Souvenir gauntlet: </span></span><span data-zh>几乎所有景区入口前都有约100米的旅游纪念品步行街。走路中间快步穿过，不停留、不对眼、不摸商品，一旦表现出一丝兴趣就会被死缠烂打。</span><span data-en>Almost every attraction has a ~100m souvenir gauntlet before the entrance. Walk fast down the middle, don't stop, don't look, don't touch anything. Any sign of interest invites an hour of harassment.</span></div></div>
+      <div class="social-item"><div class="social-dot"></div><div><span class="social-label"><span data-zh>花少7综艺曝光：</span><span data-en>Reality show exposed: </span></span><span data-zh>2025年综艺《花少7》埃及行程引发大讨论：马车正常价100埃镑，花少团被报1000，经砍价到500还被网友认为坑了。导游面对高报价不会主动帮你砍——卢克索打车比包车更划算。</span><span data-en>2025 reality show "Flower Boys 7": Horse carriages should cost 100 EGP — the cast was quoted 1,000 and "negotiated" to 500 (still overpriced). Guides won't protect you from inflated prices. In Luxor, taxis beat package cars for value.</span></div></div>
+      <div class="social-item"><div class="social-dot"></div><div><span class="social-label"><span data-zh>景区保安也要小费：</span><span data-en>Security guards too: </span></span><span data-zh>知乎高赞回答：旅游警察就在100米外，看起来最安全，但"工作证"大叔带你走人工通道进金字塔，出来后同样要一笔"不菲"的小费。真正高端的骗子以队友形式出现。</span><span data-en>Zhihu top answer: The "kindly official" who offers to walk you through a private pyramid entrance IS the scam. The most sophisticated scammers present themselves as your protectors.</span></div></div>
+      <div class="social-item"><div class="social-dot"></div><div><span class="social-label"><span data-zh>夜里十二点的街头小孩：</span><span data-en>Midnight street kids: </span></span><span data-zh>澎湃新闻记者亲历：夜里12点，一个约10岁的孩子抱着一捆书追着游客推销。心软给钱会引来更多孩子，导游的建议是"无论谁跟你说什么，都不要回应"。</span><span data-en>The Paper journalist: At midnight, a 10-year-old chased tourists selling books. Giving money attracts more children. Guides advise: "Whatever anyone says to you, do not respond."</span></div></div>
+    </div>
+  </div>
+
+  <!-- 辟谣 -->
+  <div class="cards" style="margin-top:1rem">
+    <div class="card card-tip">
+      <div class="badge badge-green"><span data-zh>客观角度</span><span data-en>Fair Perspective</span></div>
+      <h3>🤝 <span data-zh>埃及不全是骗子</span><span data-en>Not Everyone is a Scammer</span></h3>
+      <p><span data-zh>豆瓣作者提醒：小红书的"埃及避雷"内容被过度放大，部分是博眼球的流量内容。在旅游景区之外，大多数埃及人真的非常热情善良。做好心理准备、学会辨别，完全可以愉快旅行。</span>
+      <span data-en>A Douban blogger notes: Xiaohongshu "Egypt warnings" are often clickbait. Outside tourist zones, most Egyptians are genuinely warm and kind. Preparation + healthy skepticism = a wonderful trip.</span></p>
+      <div class="source-row"><span class="source-tag social">豆瓣</span><span class="source-tag">澎湃新闻</span></div>
+    </div>
+    <div class="card card-tip">
+      <div class="badge badge-green"><span data-zh>在地华人建议</span><span data-en>Local Chinese Expat</span></div>
+      <h3>🧭 <span data-zh>在埃15年华人导游说</span><span data-en>15-Year Resident's Take</span></h3>
+      <p><span data-zh>在埃及做了15年旅游地接的黎曦：骗局确实存在，但"当地人的诈骗套路都很低级，非常容易分辨"。出发前多看攻略，不至于被骗得像网上说的那么惨。跟团比自由行安全得多。</span>
+      <span data-en>Chinese guide Li Xi, 15 years in Egypt: "The scams are real but unsophisticated and easy to spot once you know them." Reading guides before departure means you won't be as badly hit as horror stories suggest. Guided tours are far safer than solo travel.</span></p>
+      <div class="source-row"><span class="source-tag">红星新闻</span><span class="source-tag">澎湃新闻</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ③ 金钱消费 -->
+<div id="money" class="section">
+  <div class="section-title"><span data-zh>金钱消费</span><span data-en>Money & Costs</span></div>
+  <div class="section-desc"><span data-zh>埃镑持续贬值，小费文化盛行，备好零钱是关键</span><span data-en>The Egyptian pound fluctuates — tips and small bills are essential everywhere</span></div>
+  <div class="alert alert-warn">
+    <span class="alert-icon">💡</span>
+    <span>
+      <span data-zh>景区门票已全面升级为<strong>刷卡为主</strong>（99%景区不收现金），但集市、小摊、打赏仍需现金。随身同时备好信用卡和小额现金。</span>
+      <span data-en><strong>Major attractions now accept cards only</strong> (99% of sites). But markets, street vendors, and tips still need cash. Always carry both a card and small bills.</span>
+    </span>
+  </div>
+  <div class="cards">
+    <div class="card card-warn">
+      <div class="badge badge-amber"><span data-zh>兑换</span><span data-en>Currency</span></div>
+      <h3>🏧 <span data-zh>机场不要多换钱</span><span data-en>Don't Exchange at the Airport</span></h3>
+      <p><span data-zh>开罗机场汇率低，落地只换必要数量。到市中心 Exchange Store 再换，汇率更好。美元在旅游区普遍接受，也可直接使用。</span>
+      <span data-en>Airport exchange rates are poor. Only change what you need to get to the city, then use licensed Exchange stores downtown for significantly better rates. USD is accepted at most tourist sites.</span></p>
+      <div class="source-row"><span class="source-tag social">小红书</span><span class="source-tag">Rough Guides</span></div>
+    </div>
+    <div class="card card-warn">
+      <div class="badge badge-amber"><span data-zh>打车</span><span data-en>Taxis</span></div>
+      <h3>🚕 <span data-zh>打车中途加价</span><span data-en>Taxi Mid-Trip Price Hike</span></h3>
+      <p><span data-zh>司机会在途中索要额外小费，200埃镑的车费临时加码是常事，部分司机精通中文。上车前谈好价格或用 Uber/Careem，价格固定透明不被宰。</span>
+      <span data-en>Drivers add "extra fees" mid-trip. Some quote in USD to confuse tourists. Always use Uber or Careem in Cairo and Hurghada for fixed upfront pricing — it's the single best protection against taxi scams.</span></p>
+      <div class="source-row"><span class="source-tag social">微博</span><span class="source-tag">Meander Wander</span></div>
+    </div>
+    <div class="card card-warn">
+      <div class="badge badge-amber"><span data-zh>找零</span><span data-en>Change</span></div>
+      <h3>🪙 <span data-zh>故意不找零</span><span data-en>The "No Change" Trick</span></h3>
+      <p><span data-zh>部分商贩以"没零钱"为由吞零头。出门随身带好小额零钱，尽量支付精确金额。小额零钱也是给小费的必需品。</span>
+      <span data-en>Vendors frequently claim they have no change for large bills. Pay the exact amount when possible. Carry a mix of 5, 10, 20 EGP notes for small purchases and tips.</span></p>
+      <div class="source-row"><span class="source-tag social">小红书</span><span class="source-tag">beyondthebucketlist</span></div>
+    </div>
+    <div class="card card-tip">
+      <div class="badge badge-green"><span data-zh>砍价</span><span data-en>Bargaining</span></div>
+      <h3>🛍️ <span data-zh>集市砍价从10%开始</span><span data-en>Start at 10% of Ask Price</span></h3>
+      <p><span data-zh>集市购物从报价的<strong>10–20%</strong>开始砍，表现出可买可不买的态度，转身就走是最强杀招——他们会叫你回来。墨镜很管用，不对眼就不被纠缠。</span>
+      <span data-en>Counter-offer at <strong>10–20% of the asking price</strong>. Show complete indifference — turn and walk away. They almost always call you back at a much lower price. This works because they need the sale more than you do.</span></p>
+      <div class="source-row"><span class="source-tag social">豆瓣长帖</span><span class="source-tag social">小红书</span><span class="source-tag">Travel Tailors</span></div>
+    </div>
+    <div class="card card-tip">
+      <div class="badge badge-green"><span data-zh>小费标准</span><span data-en>Tipping</span></div>
+      <h3>💵 <span data-zh>小费参考</span><span data-en>Tipping Reference</span></h3>
+      <p><span data-zh>酒店房间每天留1美元；餐厅消费额5%；景区导游5–10美元/天；洗手间工作人员5–10埃镑。小费是必须的，但金额完全由你决定，不要被狮子大开口吓到。</span>
+      <span data-en>Hotel room: $1/day. Restaurants: 5–10%. Tour guide: $5–10/day. Washroom attendants: 5–10 EGP. Tipping is expected but the amount is entirely your choice — don't let anyone bully you into more.</span></p>
+      <div class="source-row"><span class="source-tag">Rough Guides</span><span class="source-tag social">小红书</span></div>
+    </div>
+    <div class="card card-tip">
+      <div class="badge badge-green"><span data-zh>景区支付</span><span data-en>Site Payments</span></div>
+      <h3>💳 <span data-zh>景区刷卡，市场用现金</span><span data-en>Cards at Sites, Cash at Markets</span></h3>
+      <p><span data-zh>2025年起，埃及99%的正规景区已改为<strong>刷卡为主</strong>，很多票也可以在官网（egymonuments.com）提前预购。集市、街边、小费仍需现金，美元在旅游区广泛接受。</span>
+      <span data-en>As of 2025, <strong>99% of major attractions accept cards only</strong>. Many tickets can be pre-booked online at egymonuments.com. Markets, street food, and tipping still require cash. USD is widely accepted at tourist zones.</span></p>
+      <div class="source-row"><span class="source-tag">nileempire.com 2026</span><span class="source-tag">emotoursegypt</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ④ 交通 -->
+<div id="transport" class="section">
+  <div class="section-title"><span data-zh>交通出行</span><span data-en>Getting Around</span></div>
+  <div class="section-desc"><span data-zh>红绿灯极少、交通混乱，过马路是门技术活</span><span data-en>Traffic in Cairo is chaotic — crossing the road requires nerve</span></div>
+  <div class="alert alert-danger">
+    <span class="alert-icon">🚦</span>
+    <span>
+      <span data-zh>开罗红绿灯极少，车速快，人车混行，交通事故高发。过马路跟着当地人走，不要在马路上停留。</span>
+      <span data-en>Cairo has very few traffic lights. Drivers speed and pedestrians cross anywhere. Follow locals when crossing — never stop in the middle of the road.</span>
+    </span>
+  </div>
+  <div class="cards">
+    <div class="card card-danger">
+      <div class="badge badge-red"><span data-zh>步行</span><span data-en>On Foot</span></div>
+      <h3>🛣️ <span data-zh>开罗马路极危险</span><span data-en>Cairo Traffic is Wild</span></h3>
+      <p><span data-zh>当地人过马路全凭脚快，跟着人群走，不要在路上停留，主动避让车辆。夜间司机不开大灯是正常现象（用远光短闪来提示），不必惊慌。</span>
+      <span data-en>Cross with local pedestrians — hesitation is more dangerous than moving. Night driving without headlights is common in Egypt; drivers use brief high-beam flashes to signal instead.</span></p>
+      <div class="source-row"><span class="source-tag">US State Dept</span><span class="source-tag">Intrepid Guide</span></div>
+    </div>
+    <div class="card card-warn">
+      <div class="badge badge-amber"><span data-zh>打车</span><span data-en>Taxis</span></div>
+      <h3>🚖 <span data-zh>打车最佳实践</span><span data-en>Taxi Best Practices</span></h3>
+      <p><span data-zh>开罗和赫尔格达用 Uber / Careem，价格固定不被宰。其他城市上车前谈好总价。女生坐后排。推荐问酒店前台当地打车参考价，再去叫车。</span>
+      <span data-en>Use Uber or Careem in Cairo and Hurghada for fixed pricing. For other cities, negotiate the total fare before getting in. Women should sit in the back seat. Ask your hotel for reference prices before hailing a cab.</span></p>
+      <div class="source-row"><span class="source-tag social">小红书</span><span class="source-tag">Meander Wander</span></div>
+    </div>
+    <div class="card card-warn">
+      <div class="badge badge-amber"><span data-zh>卢克索包车</span><span data-en>Luxor Transport</span></div>
+      <h3>🐎 <span data-zh>卢克索打车比包车划算</span><span data-en>Taxis Beat Packages in Luxor</span></h3>
+      <p><span data-zh>网友总结：卢克索各景点交通便利，打车更灵活，比包车10小时制更划算。马车正常价约100埃镑，被报1000的情况很常见，导游不会主动帮你砍价。</span>
+      <span data-en>Luxor attractions are well-connected — regular taxis are more flexible and better value than fixed package cars. Horse carriages: normal price 100 EGP, but 500–1,000 EGP quotes are common. Guides won't automatically push back on prices for you.</span></p>
+      <div class="source-row"><span class="source-tag social">花少7网友讨论</span><span class="source-tag social">小红书</span></div>
+    </div>
+    <div class="card card-warn">
+      <div class="badge badge-amber"><span data-zh>夜间巴士</span><span data-en>Night Buses</span></div>
+      <h3>🌙 <span data-zh>夜间巴士有多次警察检查</span><span data-en>Night Bus Police Checks</span></h3>
+      <p><span data-zh>夜间长途巴士途中会有5–10次警察检查，每次都要出示护照，严重影响睡眠。这是正常现象，配合即可。建议选白天航班或清晨出发。</span>
+      <span data-en>Overnight buses can have 5–10 police passport checks — completely normal but very disruptive to sleep. Consider flying or taking an early morning bus instead of overnight journeys.</span></p>
+      <div class="source-row"><span class="source-tag">Katie Caf Travel</span></div>
+    </div>
+    <div class="card card-tip">
+      <div class="badge badge-green"><span data-zh>城市间</span><span data-en>City to City</span></div>
+      <h3>✈️ <span data-zh>城市间飞机省时间</span><span data-en>Fly Between Cities</span></h3>
+      <p><span data-zh>开罗→卢克索：飞机1小时/开车8小时；开罗→赫尔格达：飞机1小时/开车5小时；开罗→阿斯旺：飞机1.5小时/开车11小时。别浪费时间坐夜间大巴。</span>
+      <span data-en>Cairo→Luxor: 1hr flight vs 8hr drive. Cairo→Hurghada: 1hr vs 5hr. Cairo→Aswan: 1.5hrs vs 11hrs. Domestic flights in Egypt are affordable and save enormous amounts of time and hassle.</span></p>
+      <div class="source-row"><span class="source-tag social">小红书</span><span class="source-tag">Rough Guides</span></div>
+    </div>
+    <div class="card card-tip">
+      <div class="badge badge-green"><span data-zh>开罗市内</span><span data-en>Cairo Metro</span></div>
+      <h3>🚇 <span data-zh>地铁安全又便宜</span><span data-en>Use the Cairo Metro</span></h3>
+      <p><span data-zh>开罗有两条地铁线，便宜安全，有女性专用车厢。公交车不建议乘坐（不按站停、需懂阿拉伯语）。地铁是市内最性价比高的出行方式。</span>
+      <span data-en>Cairo's Metro is cheap, safe, and reliable. It has designated women-only cars. Avoid public buses unless you speak Arabic. The Metro + Uber/Careem combo covers almost all city transport needs.</span></p>
+      <div class="source-row"><span class="source-tag">US State Dept</span><span class="source-tag social">小红书</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑤ 文化禁忌 -->
+<div id="culture" class="section">
+  <div class="section-title"><span data-zh>文化禁忌</span><span data-en>Culture & Etiquette</span></div>
+  <div class="section-desc"><span data-zh>95%人口信仰伊斯兰教，尊重习俗让旅途更顺畅</span><span data-en>95% of Egyptians are Muslim — respecting customs makes everything smoother</span></div>
+  <div class="alert alert-warn"><span class="alert-icon">🕌</span><span><span data-zh>宗教习惯渗透日常生活方方面面。着装得体不仅是礼貌，也能大幅减少街头的骚扰和不必要的关注。</span><span data-en>Religious practices shape daily life. Dressing modestly isn't just respectful — it significantly reduces harassment and unwanted attention on the street.</span></span></div>
+  <div class="cards">
+    <div class="card card-danger"><div class="badge badge-red"><span data-zh>必须遵守</span><span data-en>Must Follow</span></div><h3>👗 <span data-zh>着装要求</span><span data-en>Dress Code</span></h3><p><span data-zh>男女都不能穿短裤、吊带、无袖背心、低领衣物。女生裙子必须过膝。进清真寺女士需包头巾，所有人必须脱鞋。随身带一条丝巾备用。</span><span data-en>Cover knees and shoulders at religious sites and markets. No shorts, sleeveless tops, or low necklines. Women need a headscarf to enter mosques. Remove shoes at the entrance. A scarf is essential kit.</span></p><div class="source-row"><span class="source-tag">Travel Tailors</span><span class="source-tag social">小红书</span></div></div>
+    <div class="card card-warn"><div class="badge badge-amber"><span data-zh>时间敏感</span><span data-en>Timing</span></div><h3>🌙 <span data-zh>斋月期间</span><span data-en>Ramadan</span></h3><p><span data-zh>斋月白天不要在公共场合吃喝抽烟。很多商店关门，部分景点关闭。斋月时间每年不同，出发前查好并尽量避开。</span><span data-en>During Ramadan, don't eat, drink, or smoke in public during daylight. Shops keep irregular hours. Ramadan dates shift each year — check before booking your trip.</span></p><div class="source-row"><span class="source-tag">Rough Guides</span><span class="source-tag social">小红书</span></div></div>
+    <div class="card card-warn"><div class="badge badge-amber"><span data-zh>社交</span><span data-en>Social</span></div><h3>🤝 <span data-zh>社交禁忌</span><span data-en>Social Norms</span></h3><p><span data-zh>男士不要主动和当地女性搭话。公共场合不要拥抱接吻（酒店可能要求出示结婚证）。不要称赞埃及人家里的东西（会被认为你在索要）。不要谈论宗教纠纷和中东政局。</span><span data-en>Men should not initiate conversation with local women. Avoid public displays of affection — some hotels request a marriage certificate for unmarried couples. Don't compliment someone's possessions; it implies you want them.</span></p><div class="source-row"><span class="source-tag">US State Dept</span><span class="source-tag">Travel Tailors</span></div></div>
+    <div class="card card-warn"><div class="badge badge-amber"><span data-zh>拍照</span><span data-en>Photography</span></div><h3>📷 <span data-zh>拍照禁区</span><span data-en>Photography Rules</span></h3><p><span data-zh>严禁拍摄军警、军事设施、政府机关。2025年起，大多数景区手机拍照免费，但专业相机/三脚架需额外付费（50–100 EGP）。不要对准当地小孩（他们会要钱）。</span><span data-en>Never photograph military, police, or government buildings. As of 2025, phone photography is free at most sites, but professional cameras/tripods cost extra (50–100 EGP). Never photograph local children without consent.</span></p><div class="source-row"><span class="source-tag">US State Dept</span><span class="source-tag">Intrepid Guide 2025</span></div></div>
+    <div class="card card-tip"><div class="badge badge-green"><span data-zh>餐桌礼仪</span><span data-en>Dining</span></div><h3>🤲 <span data-zh>用手礼仪</span><span data-en>Hand Etiquette</span></h3><p><span data-zh>吃饭用右手，不用左手（左手被认为不洁）。送礼和接礼用双手或右手。不要在街头公开饮酒（只在持牌餐厅和酒店）。</span><span data-en>Eat with your right hand — the left is considered unclean in Islamic tradition. Use both hands or your right hand to give and receive items. Don't drink alcohol on the street; only at licensed bars or hotel venues.</span></p><div class="source-row"><span class="source-tag">Travel Tailors</span></div></div>
+    <div class="card card-tip"><div class="badge badge-green"><span data-zh>饮食</span><span data-en>Food</span></div><h3>🍽️ <span data-zh>饮食注意</span><span data-en>Food Safety</span></h3><p><span data-zh>只喝瓶装水，不吃路边生果蔬。当地食物极甜腻，点饮料和咖啡要说"no sugar"，否则甜度超出想象。不要在尼罗河或运河游泳（血吸虫病风险）。</span><span data-en>Only drink bottled water. Food is very sweet — ask for "no sugar" in all beverages or the sweetness will be overwhelming. Never swim in the Nile or its canals (risk of schistosomiasis/bilharzia).</span></p><div class="source-row"><span class="source-tag">US State Dept</span><span class="source-tag social">小红书</span></div></div>
+  </div>
+</div>
+
+<!-- ⑥ 安全 -->
+<div id="safety" class="section">
+  <div class="section-title"><span data-zh>安全须知</span><span data-en>Safety</span></div>
+  <div class="section-desc"><span data-zh>主流旅游城市安全有保障，北西奈半岛禁止前往</span><span data-en>Major tourist cities are safe — North Sinai is a no-go zone</span></div>
+  <div class="alert alert-danger"><span class="alert-icon">🚨</span><span><span data-zh>出发前在"领事直通车"微信公众号登记行程。美英政府均将埃及列为"提高警惕"级别（Level 2），主流旅游城市安全有保障，北西奈半岛严禁前往。</span><span data-en>Register your travel with your country's embassy before departure. Major tourist cities (Cairo, Luxor, Aswan, Red Sea) are safe. North Sinai is a high-risk terrorism zone — do not visit.</span></span></div>
+  <div class="cards">
+    <div class="card card-danger"><div class="badge badge-red"><span data-zh>高风险</span><span data-en>High Risk</span></div><h3>🚫 <span data-zh>绝对避开的地区</span><span data-en>Regions to Avoid</span></h3><p><span data-zh>北西奈半岛为恐怖主义高风险区域，严禁前往。利比亚边境地区同样危险。坚持在主流旅游走廊（开罗/卢克索/阿斯旺/红海）内活动，这些区域武装安保随处可见。</span><span data-en>North Sinai is a designated terrorism risk zone — do not visit. The Libya border region is also high-risk. Stick to the main tourist corridor. Armed security is heavy at all major sites.</span></p><div class="source-row"><span class="source-tag">US State Dept</span><span class="source-tag">UK Gov</span><span class="source-tag">中国大使馆</span></div></div>
+    <div class="card card-warn"><div class="badge badge-amber"><span data-zh>女性旅行</span><span data-en>Women</span></div><h3>👩 <span data-zh>女性注意事项</span><span data-en>Women's Safety</span></h3><p><span data-zh>建议结伴出行，不单独行动。打车坐后排。地铁有女性专用车厢。夜间不单独外出。着装得体是减少骚扰的最有效方式。</span><span data-en>Harassment of women is a documented problem. Dress modestly, use Metro women's cars, sit in the back of taxis, travel with others when possible. Modest dress dramatically reduces unwanted attention.</span></p><div class="source-row"><span class="source-tag">US State Dept</span><span class="source-tag social">小红书</span></div></div>
+    <div class="card card-warn"><div class="badge badge-amber"><span data-zh>入境</span><span data-en>Entry</span></div><h3>✈️ <span data-zh>禁止携带入境</span><span data-en>Customs Restrictions</span></h3><p><span data-zh>无人机（含遥控玩具）和对讲机禁止入境，违者高额罚款。禁止带出境：海参、海马、珊瑚、象牙。携带超1万美元现金必须申报。药品需原包装并附处方。</span><span data-en>Drones (including toy RC aircraft) and walkie-talkies are confiscated on entry. Do not take coral, seahorses, or protected marine life out of Egypt. Cash over $10,000 must be declared. Prescription drugs need original packaging with prescription.</span></p><div class="source-row"><span class="source-tag">中国大使馆</span><span class="source-tag">US State Dept</span></div></div>
+    <div class="card card-warn"><div class="badge badge-amber"><span data-zh>健康</span><span data-en>Health</span></div><h3>☀️ <span data-zh>健康防护</span><span data-en>Health Risks</span></h3><p><span data-zh>夏季（5–10月）极度炎热，防晒必须。只喝瓶装水。谨慎选择热气球、潜水项目，必须选有正规资质的机构。Luxor和Aswan医院尚可，偏远地区急救条件极差，建议购买含医疗救援的旅行保险。</span><span data-en>Heat stroke risk June–August (up to 50°C in Luxor). Drink 3L+ water daily. Only book hot air balloons and diving with licensed operators — fatal accidents have occurred. Medical evacuation insurance is strongly recommended.</span></p><div class="source-row"><span class="source-tag">US State Dept</span><span class="source-tag">egypttoursplus</span></div></div>
+    <div class="card card-tip"><div class="badge badge-green"><span data-zh>证件</span><span data-en>Documents</span></div><h3>📋 <span data-zh>证件安全</span><span data-en>Document Safety</span></h3><p><span data-zh>护照复印件和电子版各备一份，随身携带原件（警察可随时检查）。超1万美元现金必须申报。出发前在本国使馆网站登记旅行信息。</span><span data-en>Carry your passport at all times — Egyptian police can stop and question anyone without ID. Keep digital and paper copies separately. Register your itinerary with your country's embassy before departure.</span></p><div class="source-row"><span class="source-tag">US State Dept</span><span class="source-tag">中国大使馆</span></div></div>
+    <div class="card card-tip"><div class="badge badge-green"><span data-zh>网络</span><span data-en>Connectivity</span></div><h3>📱 <span data-zh>网络与通讯</span><span data-en>Internet & SIM</span></h3><p><span data-zh>Wifi覆盖极差，连星巴克也不到1Mbps信号。推荐买沃达丰电话卡（信号最好），或出发前租好随身Wifi。出行前必须下载好离线地图（Google Maps / 高德离线包）。</span><span data-en>Public wifi is unreliable even at Starbucks (often under 1 Mbps). Buy a local Vodafone SIM at the airport for best coverage. Download offline maps before you go — don't rely on wifi for navigation.</span></p><div class="source-row"><span class="source-tag">Katie Caf Travel</span><span class="source-tag social">小红书</span></div></div>
+  </div>
+</div>
+
+<!-- ⑦ 行前准备 -->
+<div id="pack" class="section">
+  <div class="section-title"><span data-zh>行前准备</span><span data-en>Before You Go</span></div>
+  <div class="section-desc"><span data-zh>出发前做好这些，能避开大多数麻烦</span><span data-en>Prepare these essentials and you'll handle Egypt like a pro</span></div>
+  <div class="alert alert-tip"><span class="alert-icon">✅</span><span><span data-zh>旅游旺季为11月–4月，气候舒适最佳。6–8月极度炎热不推荐。出发前务必查好斋月时间并避开。</span><span data-en>Best time: November–April. Avoid June–August (45°C+). Spring (March–May) offers fewer crowds. Always check Ramadan dates — they shift each year.</span></span></div>
+  <div class="cards">
+    <div class="card card-warn"><div class="badge badge-amber"><span data-zh>签证 ⚠️已更新</span><span data-en>Visa ⚠️ Updated</span></div><h3>🛂 <span data-zh>落地签2026年已涨价</span><span data-en>Visa on Arrival — New Price</span></h3><p><span data-zh><strong>2026年3月1日起，落地签费用已涨至 $30 美元</strong>（原为$25），需携带现金，现金支付。护照有效期需超过6个月。也可提前在官网（visa2egypt.gov.eg）申请电子签证，价格更稳定。</span><span data-en><strong>As of March 1, 2026, visa on arrival costs $30 USD</strong> (up from $25). Cash payment only. Passport must have 6+ months validity. Apply for an e-Visa in advance at visa2egypt.gov.eg for a more predictable process.</span></p><div class="source-row"><span class="source-tag">VisasNews 2026.03</span><span class="source-tag">US State Dept</span></div></div>
+    <div class="card card-warn"><div class="badge badge-amber"><span data-zh>时差</span><span data-en>Time Zone</span></div><h3>⏰ <span data-zh>时差与作息</span><span data-en>Time Zone & Rhythm</span></h3><p><span data-zh>埃及比北京晚6小时。开罗是"夜晚才苏醒的城市"，当地人习惯深夜活动，商场午夜人头攒动是正常现象。政府机关下午三点后基本停摆。</span><span data-en>Egypt is UTC+2 (UTC+3 summer). Cairo comes alive after dark — shops and restaurants peak after 10pm. Government offices effectively stop work after 3pm. Embrace the late rhythm.</span></p><div class="source-row"><span class="source-tag social">小红书</span><span class="source-tag">Rough Guides</span></div></div>
+    <div class="card card-tip"><div class="badge badge-green"><span data-zh>必备物品</span><span data-en>Packing List</span></div><h3>🎒 <span data-zh>必带清单</span><span data-en>Essential Items</span></h3><p><span data-zh>防晒霜SPF50+（当地很难买到好牌子）、遮阳帽、墨镜（防骚扰神器）、丝巾、舒适步行鞋、离线地图、旅行保险、护照复印件、常用药品。</span><span data-en>SPF 50+ sunscreen (hard to find good brands locally), wide-brim hat, sunglasses (scam prevention tool), scarf, comfortable walking shoes, offline maps, travel insurance, passport copies, prescription medications.</span></p><div class="source-row"><span class="source-tag">Intrepid Guide</span><span class="source-tag social">小红书</span></div></div>
+    <div class="card card-tip"><div class="badge badge-green"><span data-zh>插头电源</span><span data-en>Power</span></div><h3>🔌 <span data-zh>电源与酒店</span><span data-en>Power & Hotels</span></h3><p><span data-zh>房间电源双圆插头220V，与国内相同。酒店一般不提供拖鞋和牙具，热水需额外付费。记得自带洗漱用品。</span><span data-en>Egypt uses Type C/F plugs at 220V — same as Europe. Budget hotels rarely provide toiletries. Many hotels charge extra for hot water. Bring a power strip if you have multiple devices.</span></p><div class="source-row"><span class="source-tag social">小红书</span><span class="source-tag">Luxor & Aswan</span></div></div>
+    <div class="card card-tip"><div class="badge badge-green"><span data-zh>民间私藏技巧</span><span data-en>Insider Tips</span></div><h3>✨ <span data-zh>网友私藏技巧</span><span data-en>Community Tips</span></h3><p><span data-zh>① 带几支不用的圆珠笔，砍价不下来时一两支直接搞定；② 学几句阿拉伯语（La Shukran / Shurta）大幅减少骚扰；③ 戴墨镜不对眼是防止摊贩死缠的最简单方式；④ 酒店前台是当地信息最可靠的来源。</span><span data-en>① Bring a few spare pens — vendors love them and they can close a deal; ② Learn "La Shukran" and "Shurta" — they work; ③ Sunglasses + no eye contact is the easiest vendor-repellent; ④ Your hotel front desk is the most reliable source of local prices and tips.</span></p><div class="source-row"><span class="source-tag social">小红书</span><span class="source-tag social">豆瓣</span><span class="source-tag">beyondthebucketlist</span></div></div>
+    <div class="card card-tip"><div class="badge badge-green"><span data-zh>保险</span><span data-en>Insurance</span></div><h3>🏥 <span data-zh>旅行保险必买</span><span data-en>Travel Insurance</span></h3><p><span data-zh>强烈建议购买含医疗救援的旅行保险，需覆盖热气球、潜水等活动。大多数偏远地区急救设施极差，救援直升机是唯一选择。</span><span data-en>Medical evacuation insurance is strongly recommended — ambulances are rare outside major cities. Your policy must cover adventure activities (hot air balloons, scuba diving). US State Dept specifically flags this.</span></p><div class="source-row"><span class="source-tag">US State Dept</span><span class="source-tag">egypttoursplus</span></div></div>
+  </div>
+</div>
+
+<!-- ⑧ 景点专项 -->
+<div id="spots" class="section">
+  <div class="section-title"><span data-zh>景点专项避坑</span><span data-en>Attraction-Specific Tips</span></div>
+  <div class="section-desc"><span data-zh>每个景点都有特定套路，去之前单独了解</span><span data-en>Each attraction has its own scam patterns — know them before you arrive</span></div>
+  <div class="alert alert-warn"><span class="alert-icon">🎫</span><span><span data-zh><strong>2025年票价更新：</strong>吉萨高地通票成人700 EGP（约$14），进入胡夫大金字塔内部需额外1500 EGP。大多数景区现在刷卡购票，可在官网 egymonuments.com 提前预购。</span><span data-en><strong>2025 ticket update:</strong> Giza Plateau general entry: 700 EGP adults (~$14). Great Pyramid interior: extra 1,500 EGP. Most sites now accept cards. Pre-book at egymonuments.com to skip queues.</span></span></div>
+  <div class="attraction-grid">
+
+    <div class="attraction-card">
+      <div class="attraction-header"><div class="attraction-emoji">🔺</div><div><div class="attraction-name"><span data-zh>吉萨金字塔 & 狮身人面像</span><span data-en>Giza Pyramids & Sphinx</span></div><div class="attraction-loc"><span data-zh>开罗 · 全程高度警惕</span><span data-en>Cairo · Maximum vigilance required</span></div></div></div>
+      <div class="attraction-body">
+        <div class="pit-item"><div class="pit-dot dot-red"></div><div class="pit-text"><span class="pit-label"><span data-zh>骆驼陷阱：</span><span data-en>Camel trap: </span></span><span data-zh>小红书@木子爱看世界：说好双人400，结束要一人600，理由"后面还跟着4头"。官方标价50 EGP/30分钟，但执行混乱。最好完全避开。</span><span data-en>Xiaohongshu user: agreed 400 EGP for two, charged 600 each at end — "4 extra camels followed." Official sign: 50 EGP/30 min, but unenforced. Best: avoid entirely.</span></div></div>
+        <div class="pit-item"><div class="pit-dot dot-red"></div><div class="pit-text"><span class="pit-label"><span data-zh>被动拍照收费：</span><span data-en>Forced photo: </span></span><span data-zh>会有人突然在你旁边比耶入镜，拍完立刻变脸要钱。帮你拍照或骆驼入镜，一律收摄影费，不给就来三个大汉。</span><span data-en>Strangers "photobomb" your shot then demand payment. Anyone who takes your photo or lets their camel appear in your frame will demand $10–100. Don't let it happen.</span></div></div>
+        <div class="pit-item"><div class="pit-dot dot-red"></div><div class="pit-text"><span class="pit-label"><span data-zh>"工作人员"引路：</span><span data-en>"Staff" shortcut: </span></span><span data-zh>工作证大叔带你走人工通道进金字塔，出来后要一笔"不菲"的小费。真正高端的骗子以保护者形式出现，出去后才索要重金。</span><span data-en>An "official" offers a private entrance. Inside, they show you around — then demand a large fee at the end. The most sophisticated scammers present as your protectors.</span></div></div>
+        <div class="pit-item"><div class="pit-dot dot-amber"></div><div class="pit-text"><span class="pit-label"><span data-zh>2025年票价：</span><span data-en>2025 prices: </span></span><span data-zh>高地通票700 EGP，进胡夫金字塔内部需额外1500 EGP，卡夫拉280 EGP，孟卡拉200–280 EGP。刷卡购票，可提前网购。</span><span data-en>Giza Plateau: 700 EGP. Great Pyramid interior: +1,500 EGP. Khafre: 280 EGP. Menkaure: 200–280 EGP. Card payment accepted; pre-book online to skip queues.</span></div></div>
+        <div class="pit-item"><div class="pit-dot dot-green"></div><div class="pit-text"><span class="pit-label"><span data-zh>建议：</span><span data-en>Tip: </span></span><span data-zh>戴墨镜不对眼，和导游一起走。遇到任何搭讪直接无视或说 La Shukran。预约好机场接送，避免落地就被坑。</span><span data-en>Wear sunglasses, avoid eye contact, and stay with your guide. Say La Shukran to everything else. Pre-arrange airport pickup to avoid the first scam before you even leave arrivals.</span></div></div>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <div class="attraction-header"><div class="attraction-emoji">🏛️</div><div><div class="attraction-name"><span data-zh>埃及博物馆</span><span data-en>Egyptian Museum</span></div><div class="attraction-loc"><span data-zh>开罗 · 图坦卡蒙宝藏在这里</span><span data-en>Cairo · Tutankhamun's treasures</span></div></div></div>
+      <div class="attraction-body">
+        <div class="pit-item"><div class="pit-dot dot-red"></div><div class="pit-text"><span class="pit-label"><span data-zh>入口假文物：</span><span data-en>Fake artifacts: </span></span><span data-zh>广场小贩推销"正版文物"，全是假货，别停下搭话，不要和任何人眼神接触。</span><span data-en>Vendors around Tahrir Square sell fake "ancient artifacts." None are real. Don't stop, don't engage, don't make eye contact.</span></div></div>
+        <div class="pit-item"><div class="pit-dot dot-amber"></div><div class="pit-text"><span class="pit-label"><span data-zh>拍照规定：</span><span data-en>Camera rules: </span></span><span data-zh>木乃伊室等区域严禁拍照，违规会被没收相机或罚款。手机拍照一般免费，专业相机50–100 EGP额外收费。</span><span data-en>Mummy Room and some galleries strictly forbid photography. Phone cameras are generally free. Professional cameras cost 50–100 EGP extra. Equipment may be confiscated for violations.</span></div></div>
+        <div class="pit-item"><div class="pit-dot dot-amber"></div><div class="pit-text"><span class="pit-label"><span data-zh>时间规划：</span><span data-en>Time needed: </span></span><span data-zh>藏品超12万件，建议预留一整天。图坦卡蒙展厅本身就需要2小时以上，不要只给半小时走马观花。</span><span data-en>Over 120,000 artifacts. Allocate a full day. Tutankhamun's galleries alone need 2+ hours. It's one of the world's greatest museums — don't rush it.</span></div></div>
+        <div class="pit-item"><div class="pit-dot dot-green"></div><div class="pit-text"><span class="pit-label"><span data-zh>建议：</span><span data-en>Tip: </span></span><span data-zh>提前网上购票可以跳过排队。请有旅游部认证的讲解员非常值得，能把整个参观体验提升一个档次。</span><span data-en>Pre-book tickets online to skip queues. An accredited guide transforms the experience — worth every penny for the historical context they provide.</span></div></div>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <div class="attraction-header"><div class="attraction-emoji">⚱️</div><div><div class="attraction-name"><span data-zh>卢克索神庙 / 帝王谷</span><span data-en>Luxor / Valley of the Kings</span></div><div class="attraction-loc"><span data-zh>上埃及 · 必去目的地</span><span data-en>Upper Egypt · Can't miss</span></div></div></div>
+      <div class="attraction-body">
+        <div class="pit-item"><div class="pit-dot dot-red"></div><div class="pit-text"><span class="pit-label"><span data-zh>热气球事故：</span><span data-en>Balloon risk: </span></span><span data-zh>卢克索热气球多次发生死亡事故（美国国务院专门点名警告），必须选有官方运营执照的公司，不要贪便宜。</span><span data-en>Multiple fatal balloon accidents in Luxor (specifically flagged by the US State Dept). Only book with operators who show valid official licenses. Never choose based on price alone.</span></div></div>
+        <div class="pit-item"><div class="pit-dot dot-red"></div><div class="pit-text"><span class="pit-label"><span data-zh>马车加价套路：</span><span data-en>Carriage overcharging: </span></span><span data-zh>花少7曝光：马车正常价100埃镑，被报1000，最终500成交。导游面对高报价不会主动帮你砍。出发前自己问好底价，或直接打Uber。</span><span data-en>Reality show exposed: normal carriage price 100 EGP, quoted 1,000, "negotiated" to 500 — still overpriced. Guides won't protect you here. Check prices yourself or just use Uber.</span></div></div>
+        <div class="pit-item"><div class="pit-dot dot-amber"></div><div class="pit-text"><span class="pit-label"><span data-zh>帝王谷分票：</span><span data-en>Ticket system: </span></span><span data-zh>通票（750 EGP）含3个标准陵墓，图坦卡蒙墓700 EGP、塞提一世墓2000 EGP需单独购买。进门前看清楚含哪几个。</span><span data-en>General ticket (750 EGP) covers 3 standard tombs. Tutankhamun (700 EGP) and Seti I (2,000 EGP) are extra. Check exactly what's included before purchasing.</span></div></div>
+        <div class="pit-item"><div class="pit-dot dot-green"></div><div class="pit-text"><span class="pit-label"><span data-zh>建议：</span><span data-en>Tip: </span></span><span data-zh>卢克索打车比包车灵活划算，景点间距离适合打表。从卢克索飞回开罗只需1小时，别坐8小时夜班车。早上6点开始参观，避开热浪。</span><span data-en>Taxis beat package cars for flexibility and value in Luxor. Fly back to Cairo (1hr) rather than the overnight bus (8hrs). Start sightseeing at 6am before the heat becomes unbearable.</span></div></div>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <div class="attraction-header"><div class="attraction-emoji">🌊</div><div><div class="attraction-name"><span data-zh>红海（赫尔格达）</span><span data-en>Red Sea — Hurghada</span></div><div class="attraction-loc"><span data-zh>东部海滨 · 世界级潜水胜地</span><span data-en>East coast · World-class diving</span></div></div></div>
+      <div class="attraction-body">
+        <div class="pit-item"><div class="pit-dot dot-red"></div><div class="pit-text"><span class="pit-label"><span data-zh>潜水机构良莠不齐：</span><span data-en>Diving safety: </span></span><span data-zh>美国国务院记录：红海沿岸多次发生过夜潜水船致死事故。必须选有正规执照的机构，查清设备再下水，不要贪便宜。</span><span data-en>US State Dept documents multiple fatal accidents on overnight dive boats along the Red Sea coast. Only dive with licensed operators who let you inspect equipment first.</span></div></div>
+        <div class="pit-item"><div class="pit-dot dot-red"></div><div class="pit-text"><span class="pit-label"><span data-zh>Airbnb体验坑：</span><span data-en>Airbnb trap: </span></span><span data-zh>小红书和网友一致反映：平台上的出海体验活动差评率极高，临时改行程、缩短时间很常见。建议到当地旅行社当面谈，签好合同再付全款。</span><span data-en>Xiaohongshu users consistently report Airbnb Experiences here are unreliable — itineraries get shortened or cancelled. Book in person at licensed tour offices and get a written contract before paying in full.</span></div></div>
+        <div class="pit-item"><div class="pit-dot dot-amber"></div><div class="pit-text"><span class="pit-label"><span data-zh>酒店宰客：</span><span data-en>Hotel overpricing: </span></span><span data-zh>旅游区酒店价格虚高，对比 Booking.com 和 Agoda 再定，差价可能很大。在赫尔格达住酒店要查清楚是否包早餐和税费。</span><span data-en>Compare hotels on Booking.com vs Agoda — price gaps are often significant. Check carefully whether rates include breakfast and taxes, as these are frequently added later.</span></div></div>
+        <div class="pit-item"><div class="pit-dot dot-green"></div><div class="pit-text"><span class="pit-label"><span data-zh>建议：</span><span data-en>Tip: </span></span><span data-zh>红海珊瑚礁是世界级的，非常值得来。安全第一，选正规机构，享受这片海。</span><span data-en>The Red Sea reefs are genuinely world-class and absolutely worth the trip. Just choose reputable operators and prioritize safety over price.</span></div></div>
+      </div>
+    </div>
+
+    <div class="attraction-card">
+      <div class="attraction-header"><div class="attraction-emoji">🚢</div><div><div class="attraction-name"><span data-zh>尼罗河游轮</span><span data-en>Nile River Cruise</span></div><div class="attraction-loc"><span data-zh>阿斯旺 ↔ 卢克索</span><span data-en>Aswan ↔ Luxor</span></div></div></div>
+      <div class="attraction-body">
+        <div class="pit-item"><div class="pit-dot dot-red"></div><div class="pit-text"><span class="pit-label"><span data-zh>低价陷阱：</span><span data-en>Low-price trap: </span></span><span data-zh>低价游轮常以"升级费""港口费""税费"追加收费，最终价格可能是报价的两倍。要求提供完全含税的书面报价，再付定金。</span><span data-en>Budget cruises add "upgrade fees," port charges, and taxes not quoted upfront — the final bill can double the advertised price. Always get a fully inclusive written quote before paying any deposit.</span></div></div>
+        <div class="pit-item"><div class="pit-dot dot-amber"></div><div class="pit-text"><span class="pit-label"><span data-zh>出发班次有限：</span><span data-en>Limited departures: </span></span><span data-zh>游轮不是每天出发，很多只有周一/周三/周五班，提前查好班次安排行程，避免在城市空等几天。</span><span data-en>Cruises don't run daily — many depart only Mon/Wed/Fri. Check the schedule carefully to avoid waiting days in Aswan or Luxor for the next departure.</span></div></div>
+        <div class="pit-item"><div class="pit-dot dot-amber"></div><div class="pit-text"><span class="pit-label"><span data-zh>船上消费：</span><span data-en>Onboard prices: </span></span><span data-zh>游轮上纪念品和餐饮是陆地的3–5倍，上船前备好零食和必需品。水上WiFi几乎不可用，提前下载好离线内容。</span><span data-en>Drinks, snacks, and souvenirs cost 3–5× land prices onboard. Stock up before boarding. On-board wifi is essentially useless — download entertainment before departure.</span></div></div>
+        <div class="pit-item"><div class="pit-dot dot-green"></div><div class="pit-text"><span class="pit-label"><span data-zh>建议：</span><span data-en>Tip: </span></span><span data-zh>选4–5星游轮性价比比低价船好太多。旺季（11月–2月）提前3个月预订。3晚阿斯旺→卢克索是经典线路。</span><span data-en>4–5 star cruises are far better value than budget options. Book 3 months ahead for peak season (Nov–Feb). The 3-night Aswan→Luxor route is the classic itinerary.</span></div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 评论区 -->
+<div class="comments-section">
+  <div class="comments-header">
+    <div class="comments-title"><span data-zh>网友补充讨论</span><span data-en>Community Discussion</span></div>
+    <div class="comments-badge"><span data-zh>讨论区</span><span data-en>Discussion</span></div>
+  </div>
+  <p class="comments-desc">
+    <span data-zh>去过埃及？有新的坑没被收录？欢迎留言分享你的真实经历，帮助更多人少踩雷。</span>
+    <span data-en>Been to Egypt? Found a scam we missed? Share your real experience below and help fellow travelers.</span>
+  </p>
+  <script src="https://giscus.app/client.js"
+    data-repo="xiangxuelun777-afk/egypt-tips"
+    data-repo-id="R_kgDOSSsl4Q"
+    data-category="General"
+    data-category-id="DIC_kwDOSSsl4c4C8NOy"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+  </script>
+</div>
+
+</div><!-- /main -->
+
+<footer>
+  <p>
+    <span data-zh>内容来源：中国驻埃及大使馆 · 美国国务院 · 英国政府旅行建议 · Rough Guides · 小红书 · 微博 · 抖音 · 豆瓣 · 知乎 · 澎湃新闻 · 红星新闻 · Reddit · beyondthebucketlist · Meander Wander</span>
+    <span data-en>Sources: Chinese Embassy · US State Dept · UK Gov · Rough Guides · Xiaohongshu · Weibo · Douyin · Douban · Zhihu · The Paper · Red Star News · Reddit · beyondthebucketlist · Meander Wander</span>
+  </p>
+  <p style="margin-top:6px">
+    <span data-zh>仅供参考，出行以最新官方信息为准 · 最后更新：2025年 · 有新的坑欢迎在评论区补充 🙏</span>
+    <span data-en>For reference only — always check current official advisories · Last updated: 2025 · New tips welcome in the comments 🙏</span>
+  </p>
+</footer>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function setLang(lang) {
+  document.body.className = lang;
+  document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+}
+</script>
+</body>
+</html>
